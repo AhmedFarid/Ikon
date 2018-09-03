@@ -15,12 +15,13 @@
 		69619B66213D3C3B0076B971 /* GuestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69619B65213D3C3B0076B971 /* GuestCollectionViewCell.swift */; };
 		696F59F9213BFC6F007EB59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F59F8213BFC6F007EB59C /* AppDelegate.swift */; };
 		696F59FE213BFC6F007EB59C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696F59FC213BFC6F007EB59C /* Main.storyboard */; };
-		696F5A00213BFC8D007EB59C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696F59FF213BFC8D007EB59C /* Assets.xcassets */; };
 		696F5A03213BFC8D007EB59C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696F5A01213BFC8D007EB59C /* LaunchScreen.storyboard */; };
 		696F5A0C213C05E7007EB59C /* mainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5A0B213C05E7007EB59C /* mainHomeVC.swift */; };
 		696F5A0E213C0618007EB59C /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5A0D213C0618007EB59C /* signInVC.swift */; };
 		696F5A10213C06B7007EB59C /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5A0F213C06B7007EB59C /* signUp.swift */; };
 		6990F7E0213D778D00FE807D /* maintanceLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6990F7DF213D778D00FE807D /* maintanceLocationVC.swift */; };
+		699F8487213DB44B00AC7C89 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 699F8486213DB44A00AC7C89 /* SWRevealViewController.m */; };
+		699F8489213DCB4000AC7C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699F8488213DCB3A00AC7C89 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +34,16 @@
 		696F59F5213BFC6F007EB59C /* ikon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696F59F8213BFC6F007EB59C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696F59FD213BFC6F007EB59C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		696F59FF213BFC8D007EB59C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		696F5A02213BFC8D007EB59C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		696F5A04213BFC8D007EB59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		696F5A0B213C05E7007EB59C /* mainHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainHomeVC.swift; sourceTree = "<group>"; };
 		696F5A0D213C0618007EB59C /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		696F5A0F213C06B7007EB59C /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		6990F7DF213D778D00FE807D /* maintanceLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maintanceLocationVC.swift; sourceTree = "<group>"; };
+		699F8484213DB44700AC7C89 /* ikon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ikon-Bridging-Header.h"; sourceTree = "<group>"; };
+		699F8485213DB44A00AC7C89 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		699F8486213DB44A00AC7C89 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		699F8488213DCB3A00AC7C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +97,12 @@
 				696F5A0A213C0327007EB59C /* Controller */,
 				696F59F8213BFC6F007EB59C /* AppDelegate.swift */,
 				696F59FC213BFC6F007EB59C /* Main.storyboard */,
-				696F59FF213BFC8D007EB59C /* Assets.xcassets */,
 				696F5A01213BFC8D007EB59C /* LaunchScreen.storyboard */,
 				696F5A04213BFC8D007EB59C /* Info.plist */,
+				699F8485213DB44A00AC7C89 /* SWRevealViewController.h */,
+				699F8486213DB44A00AC7C89 /* SWRevealViewController.m */,
+				699F8484213DB44700AC7C89 /* ikon-Bridging-Header.h */,
+				699F8488213DCB3A00AC7C89 /* Assets.xcassets */,
 			);
 			path = ikon;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 				TargetAttributes = {
 					696F59F4213BFC6F007EB59C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -174,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				696F5A03213BFC8D007EB59C /* LaunchScreen.storyboard in Resources */,
-				696F5A00213BFC8D007EB59C /* Assets.xcassets in Resources */,
+				699F8489213DCB4000AC7C89 /* Assets.xcassets in Resources */,
 				696F59FE213BFC6F007EB59C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +205,7 @@
 				6990F7E0213D778D00FE807D /* maintanceLocationVC.swift in Sources */,
 				69157E5E213C73740091B208 /* maintanceVC.swift in Sources */,
 				69157E5A213C661B0091B208 /* guestVC.swift in Sources */,
+				699F8487213DB44B00AC7C89 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ikon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -348,6 +358,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farid.Mohar.ikon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ikon/ikon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -357,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ikon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,6 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farid.Mohar.ikon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ikon/ikon-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

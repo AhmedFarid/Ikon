@@ -14,7 +14,10 @@ class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     var sliderArray = [UIImage(named: "1"),UIImage(named: "2"),UIImage(named: "3")]
     
     override func viewDidLoad() {
-        super.viewDidLoad()	
+        super.viewDidLoad()
+
+        
+
 
         
     }
@@ -28,5 +31,16 @@ class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         cell.gustSlider.image = sliderArray[indexPath.row]
         return cell
     }
-
+    
+    
+    //IBActions/////////////////////////////////
+    @IBAction func sidemenuBTN(_ sender: Any) {
+        if let vc = self.revealViewController(){
+            vc.revealToggle(animated: true)
+            
+            self.view.addGestureRecognizer(vc.panGestureRecognizer())
+            self.view.addGestureRecognizer(vc.tapGestureRecognizer())
+        }
+    }
+    
 }
