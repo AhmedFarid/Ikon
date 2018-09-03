@@ -8,29 +8,25 @@
 
 import UIKit
 
-class guestVC: UIViewController {
+class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var collectionviewGuest: UICollectionView!
+    var sliderArray = [UIImage(named: "1"),UIImage(named: "2"),UIImage(named: "3")]
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor.green
+        super.viewDidLoad()	
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sliderArray.count
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! GuestCollectionViewCell
+        cell.gustSlider.image = sliderArray[indexPath.row]
+        return cell
+    }
 
 }
