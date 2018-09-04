@@ -40,6 +40,7 @@ class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             
             self.view.addGestureRecognizer(vc.panGestureRecognizer())
             self.view.addGestureRecognizer(vc.tapGestureRecognizer())
+            vc.rearViewRevealWidth = 320
         }
     }
     

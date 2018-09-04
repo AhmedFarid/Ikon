@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690E9283213E8D4300DB0BF9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E9282213E8D4200DB0BF9 /* GradientView.swift */; };
 		69157E56213C19800091B208 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E55213C19800091B208 /* placeHolderColor.swift */; };
 		69157E58213C40FB0091B208 /* MobileRepairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E57213C40FB0091B208 /* MobileRepairVC.swift */; };
 		69157E5A213C661B0091B208 /* guestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E59213C661B0091B208 /* guestVC.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690E9282213E8D4200DB0BF9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		69157E55213C19800091B208 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
 		69157E57213C40FB0091B208 /* MobileRepairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRepairVC.swift; sourceTree = "<group>"; };
 		69157E59213C661B0091B208 /* guestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestVC.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				69157E55213C19800091B208 /* placeHolderColor.swift */,
+				690E9282213E8D4200DB0BF9 /* GradientView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				69619B66213D3C3B0076B971 /* GuestCollectionViewCell.swift in Sources */,
 				6990F7E0213D778D00FE807D /* maintanceLocationVC.swift in Sources */,
 				69157E5E213C73740091B208 /* maintanceVC.swift in Sources */,
+				690E9283213E8D4300DB0BF9 /* GradientView.swift in Sources */,
 				69157E5A213C661B0091B208 /* guestVC.swift in Sources */,
 				699F8487213DB44B00AC7C89 /* SWRevealViewController.m in Sources */,
 			);
