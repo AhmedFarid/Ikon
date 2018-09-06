@@ -1,0 +1,6 @@
+framework module Pods_ikon {
+  umbrella header "Pods-ikon-umbrella.h"
+
+  export *
+  module * { export * }
+}
