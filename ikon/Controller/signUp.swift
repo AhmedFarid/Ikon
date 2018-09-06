@@ -24,8 +24,6 @@ class signUp: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     //Actions........................................
@@ -63,3 +61,4 @@ class signUp: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
 }
+

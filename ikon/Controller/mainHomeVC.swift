@@ -15,4 +15,7 @@ class mainHomeVC: UIViewController {
 
 }
 
+    @IBAction func gustBtn(_ sender: Any) {
+        performSegue(withIdentifier: "guestSuge", sender: self)
+    }
 }

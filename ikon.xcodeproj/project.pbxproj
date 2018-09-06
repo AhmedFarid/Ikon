@@ -14,6 +14,7 @@
 		69157E5A213C661B0091B208 /* guestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E59213C661B0091B208 /* guestVC.swift */; };
 		69157E5C213C733E0091B208 /* shopingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E5B213C733E0091B208 /* shopingVC.swift */; };
 		69157E5E213C73740091B208 /* maintanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E5D213C73740091B208 /* maintanceVC.swift */; };
+		692259B6214139BF00D83D40 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692259B5214139BF00D83D40 /* helper.swift */; };
 		69619B66213D3C3B0076B971 /* GuestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69619B65213D3C3B0076B971 /* GuestCollectionViewCell.swift */; };
 		696F59F9213BFC6F007EB59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F59F8213BFC6F007EB59C /* AppDelegate.swift */; };
 		696F59FE213BFC6F007EB59C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696F59FC213BFC6F007EB59C /* Main.storyboard */; };
@@ -25,8 +26,6 @@
 		699F8487213DB44B00AC7C89 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 699F8486213DB44A00AC7C89 /* SWRevealViewController.m */; };
 		699F8489213DCB4000AC7C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699F8488213DCB3A00AC7C89 /* Assets.xcassets */; };
 		69D9073B213EB6BA0030469F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69D9073A213EB6B90030469F /* GoogleService-Info.plist */; };
-		69D9073E213ED4C90030469F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D9073C213ED4C30030469F /* FBSDKCoreKit.framework */; };
-		69D9073F213ED4C90030469F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D9073D213ED4C90030469F /* FBSDKLoginKit.framework */; };
 		69D90745213EED550030469F /* showingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D90744213EED550030469F /* showingAlert.swift */; };
 		69D90748213F19780030469F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D90747213F19780030469F /* API.swift */; };
 		69D9074A213F26560030469F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D90749213F26560030469F /* String.swift */; };
@@ -42,6 +41,7 @@
 		69157E59213C661B0091B208 /* guestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestVC.swift; sourceTree = "<group>"; };
 		69157E5B213C733E0091B208 /* shopingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopingVC.swift; sourceTree = "<group>"; };
 		69157E5D213C73740091B208 /* maintanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maintanceVC.swift; sourceTree = "<group>"; };
+		692259B5214139BF00D83D40 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
 		69619B65213D3C3B0076B971 /* GuestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCollectionViewCell.swift; sourceTree = "<group>"; };
 		696F59F5213BFC6F007EB59C /* ikon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696F59F8213BFC6F007EB59C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,8 +57,6 @@
 		699F8486213DB44A00AC7C89 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		699F8488213DCB3A00AC7C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69D9073A213EB6B90030469F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		69D9073C213ED4C30030469F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		69D9073D213ED4C90030469F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		69D90740213EDF5B0030469F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../untitled folder/FacebookSDKs-iOS-4.36.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		69D90741213EDF5B0030469F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../untitled folder/FacebookSDKs-iOS-4.36.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		69D90744213EED550030469F /* showingAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showingAlert.swift; sourceTree = "<group>"; };
@@ -76,8 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47374EFD4488089CA011B9E8 /* Pods_ikon.framework in Frameworks */,
-				69D9073E213ED4C90030469F /* FBSDKCoreKit.framework in Frameworks */,
-				69D9073F213ED4C90030469F /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +88,7 @@
 				69D90744213EED550030469F /* showingAlert.swift */,
 				69D90749213F26560030469F /* String.swift */,
 				69D9074E213F30FC0030469F /* emailValidation.swift */,
+				692259B5214139BF00D83D40 /* helper.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -139,8 +136,6 @@
 				699F8486213DB44A00AC7C89 /* SWRevealViewController.m */,
 				699F8484213DB44700AC7C89 /* ikon-Bridging-Header.h */,
 				699F8488213DCB3A00AC7C89 /* Assets.xcassets */,
-				69D9073C213ED4C30030469F /* FBSDKCoreKit.framework */,
-				69D9073D213ED4C90030469F /* FBSDKLoginKit.framework */,
 			);
 			path = ikon;
 			sourceTree = "<group>";
@@ -323,6 +318,7 @@
 				696F5A0C213C05E7007EB59C /* mainHomeVC.swift in Sources */,
 				69157E5C213C733E0091B208 /* shopingVC.swift in Sources */,
 				69D9074F213F30FC0030469F /* emailValidation.swift in Sources */,
+				692259B6214139BF00D83D40 /* helper.swift in Sources */,
 				69D90748213F19780030469F /* API.swift in Sources */,
 				69157E58213C40FB0091B208 /* MobileRepairVC.swift in Sources */,
 				696F5A0E213C0618007EB59C /* signInVC.swift in Sources */,

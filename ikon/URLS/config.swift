@@ -10,7 +10,7 @@ import Foundation
 
 
 struct URLs {
-    static let main = "http://192.168.1.22:8080/ikon/api/"
+    static let main = "http://ikongo.com/site/api/"
     
     
     static let login = main + "login"
