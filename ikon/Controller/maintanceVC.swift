@@ -7,36 +7,106 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class maintanceVC: UIViewController {
-
+class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //outLets.......................................
-    @IBOutlet weak var selectServiceTF: UITextField!
-    @IBOutlet weak var selectModelTF: UITextField!
-    @IBOutlet weak var selectColorTF: UITextField!
-    @IBOutlet weak var issueTF: UITextField!
+    @IBOutlet weak var servicePikerView: UIPickerView!
+    @IBOutlet weak var modelPikerView: UIPickerView!
+    @IBOutlet weak var colorPikerView: UIPickerView!
+    @IBOutlet weak var issuePikerview: UIPickerView!
     @IBOutlet weak var otherIssueTF: UITextField!
     //outLets.......................................
+    //data..........................................
+    var service = ["Vist",
+                   "Maintenance"
+    ]
+    var color = ["White",
+                 "Red",
+                 "Gold",
+                 "Silver",
+                 "Black"
+    ]
+    var model = [maintanceAPI]()
+    var issue = [isuueAPI]()
+    //data..........................................
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        handelRefreshIssue()
+        handelRefresh()
     }
-    
+    fileprivate func handelRefreshIssue() {
+        API.issueList { (error: Error?, issuee: [isuueAPI]?) in
+            if let issues = issuee {
+                print("here3 \(issues)")
+                self.issue = issues
+                self.issuePikerview.reloadAllComponents()
+            }
+        }
+        
+    }
+    fileprivate func handelRefresh() {
+        API.productList { (error: Error?, prodect: [maintanceAPI]?) in
+            if let prodects = prodect {
+                print("here \(prodects)")
+                self.model = prodects
+                self.modelPikerView.reloadAllComponents()
+                
+            }
+        }
+    }
     //Actions.......................................
     @IBAction func getPrice(_ sender: Any) {
-        //////////////////////////////////////////////////////////////////////////////////////
-        guard let selectService = selectServiceTF.text, !selectService.isEmpty else { return }
-        guard let selectModel = selectModelTF.text, !selectModel.isEmpty else { return }
-        guard let selectColor = selectColorTF.text, !selectColor.isEmpty else { return }
-        guard let issue = issueTF.text, !issue.isEmpty else { return }
-        guard let otherIssue = otherIssueTF.text, !otherIssue.isEmpty else { return }
-        performSegue(withIdentifier: "maintanceSuge", sender: nil)
-        //////////////////////////////////////////////////////////////////////////////////////
+        performSegue(withIdentifier: "getPrice", sender: nil)
+    }
+    //Actions.......................................
+    
+    //pikerviewFuncs................................
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if pickerView.tag == 0 {
+            return 1
+        }else if pickerView.tag == 1 {
+            return 1
+        }else if pickerView.tag == 2{
+            return 1
+        }else {
+            return 1
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView.tag == 0 {
+        return service.count
+        }else if pickerView.tag == 1 {
+            return model.count
+        }else if pickerView.tag == 2 {
+            return color.count
+        }else {
+            return issue.count
+        }
         
     }
     
-    //Actions.......................................
-
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 0 {
+        return service[row]
+        }else if pickerView.tag == 1 {
+            return model[row].productsName
+        }else if pickerView.tag == 2 {
+            return color[row]
+        }else {
+            return issue[row].issueType
+        }
+    }
+    //pikerviewFuncs................................
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
+    
 }

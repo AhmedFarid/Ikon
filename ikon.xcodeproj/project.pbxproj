@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		47374EFD4488089CA011B9E8 /* Pods_ikon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5511EE72E638D1EA0EA6A4 /* Pods_ikon.framework */; };
 		690E9283213E8D4300DB0BF9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E9282213E8D4200DB0BF9 /* GradientView.swift */; };
+		6913A2FE2142B7C300B7A793 /* API+Mantince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6913A2FD2142B7C100B7A793 /* API+Mantince.swift */; };
+		6913A3002142B8E900B7A793 /* maintanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6913A2FF2142B8E900B7A793 /* maintanceAPI.swift */; };
 		69157E56213C19800091B208 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E55213C19800091B208 /* placeHolderColor.swift */; };
 		69157E58213C40FB0091B208 /* MobileRepairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E57213C40FB0091B208 /* MobileRepairVC.swift */; };
 		69157E5A213C661B0091B208 /* guestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157E59213C661B0091B208 /* guestVC.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		1594240A850932DA456E1CC0 /* Pods-ikon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ikon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ikon/Pods-ikon.debug.xcconfig"; sourceTree = "<group>"; };
 		690E9282213E8D4200DB0BF9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		6913A2FD2142B7C100B7A793 /* API+Mantince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Mantince.swift"; sourceTree = "<group>"; };
+		6913A2FF2142B8E900B7A793 /* maintanceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maintanceAPI.swift; sourceTree = "<group>"; };
 		69157E55213C19800091B208 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
 		69157E57213C40FB0091B208 /* MobileRepairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRepairVC.swift; sourceTree = "<group>"; };
 		69157E59213C661B0091B208 /* guestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestVC.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				69619B65213D3C3B0076B971 /* GuestCollectionViewCell.swift */,
+				6913A2FF2142B8E900B7A793 /* maintanceAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				69D90747213F19780030469F /* API.swift */,
+				6913A2FD2142B7C100B7A793 /* API+Mantince.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				69D9074D213F2E370030469F /* config.swift in Sources */,
 				696F5A0C213C05E7007EB59C /* mainHomeVC.swift in Sources */,
 				69157E5C213C733E0091B208 /* shopingVC.swift in Sources */,
+				6913A2FE2142B7C300B7A793 /* API+Mantince.swift in Sources */,
 				69D9074F213F30FC0030469F /* emailValidation.swift in Sources */,
 				692259B6214139BF00D83D40 /* helper.swift in Sources */,
 				69D90748213F19780030469F /* API.swift in Sources */,
@@ -330,6 +337,7 @@
 				690E9283213E8D4300DB0BF9 /* GradientView.swift in Sources */,
 				69157E5A213C661B0091B208 /* guestVC.swift in Sources */,
 				69D9074A213F26560030469F /* String.swift in Sources */,
+				6913A3002142B8E900B7A793 /* maintanceAPI.swift in Sources */,
 				699F8487213DB44B00AC7C89 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
