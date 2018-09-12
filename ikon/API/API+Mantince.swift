@@ -37,12 +37,12 @@ extension API {
                         completion(nil , nil)
                         return
                     }
-                    print("1 \(dataArray)")
+                    //print("1 \(dataArray)")
                     var productList = [maintanceAPI]()
                     for products in dataArray {
                         if let  products = products.dictionary, let prodecta = maintanceAPI.init(dict: products) {
                             productList.append(prodecta)
-                            print("1 \(prodecta)")
+                            //print("1 \(prodecta)")
                         }
                     }
                     completion(nil, productList)
@@ -67,9 +67,9 @@ extension API {
                 switch response.result
                 {
                 case .failure(let error):
-                    print(error)
+                    //print(error)
                     completion(error, nil)
-                    print(error)
+                    //print(error)
                     
                 case .success(let value):
                     let json = JSON(value)
@@ -78,13 +78,14 @@ extension API {
                         completion(nil , nil)
                         return
                     }
-                    print("new \(dataArray)")
                     
+                    
+                    //print("new \(dataArray)")
                     var issueList = [isuueAPI]()
                     for data in dataArray {
                         if let data = data.dictionary, let issue = isuueAPI.init(dict: data) {
                             issueList.append(issue)
-                            print("new2 \(issue)")
+                            //print("new2 \(issue)")
                         }
                         
                     }

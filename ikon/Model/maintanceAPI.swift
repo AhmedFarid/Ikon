@@ -35,5 +35,9 @@ class isuueAPI: NSObject {
     }
 }
 
+class issuePriceAPI {
+    var price: String = ""
+}
+
 
 

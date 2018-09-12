@@ -20,8 +20,16 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var otherIssueTF: UITextField!
     //outLets.......................................
     //data..........................................
-    var service = ["Vist",
-                   "Maintenance"
+    
+    var productId = ""
+    var issueId = ""
+    var type = ""
+    var colorsent = ""
+    
+    var price = [issuePriceAPI]()
+    
+    var service = ["visit",
+                   "maintenance"
     ]
     var color = ["White",
                  "Red",
@@ -40,7 +48,7 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     fileprivate func handelRefreshIssue() {
         API.issueList { (error: Error?, issuee: [isuueAPI]?) in
             if let issues = issuee {
-                print("here3 \(issues)")
+                //print("here3 \(issues)")
                 self.issue = issues
                 self.issuePikerview.reloadAllComponents()
             }
@@ -50,7 +58,7 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     fileprivate func handelRefresh() {
         API.productList { (error: Error?, prodect: [maintanceAPI]?) in
             if let prodects = prodect {
-                print("here \(prodects)")
+                //print("here \(prodects)")
                 self.model = prodects
                 self.modelPikerView.reloadAllComponents()
                 
@@ -59,7 +67,18 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     //Actions.......................................
     @IBAction func getPrice(_ sender: Any) {
-        performSegue(withIdentifier: "getPrice", sender: nil)
+        
+        let apiToken = "11"
+        APIGetPrice.getPrice(apiToken: apiToken, productId: productId, issueId: issueId, type: type) { (error: Error?, pricee: [issuePriceAPI]?) in
+            if let prices = pricee {
+                print("pricr\(prices)")
+                self.price = prices
+                print("last  \(self.price)")
+            }else {
+                print("Error in price")
+            }
+        }
+        performSegue(withIdentifier: "getPrice", sender: price)
     }
     //Actions.......................................
     
@@ -105,6 +124,19 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     //pikerviewFuncs................................
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 0 {
+            self.type = service[row]
+            print(type)
+        }else if pickerView.tag == 1 {
+            self.productId = model[row].productsId
+            print(productId)
+        }else if pickerView.tag == 2 {
+            self.colorsent = color[row]
+            print(colorsent)
+        }else {
+            self.issueId = issue[row].issueId
+            print(issueId)
+        }
         
     }
     

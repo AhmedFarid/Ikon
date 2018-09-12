@@ -617,6 +617,9 @@
                         <viewLayoutGuide key="safeArea" id="NWb-5w-FXC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Price" id="C9K-m5-zed"/>
+                    <connections>
+                        <outlet property="priceLabel" destination="xEi-fL-LdF" id="8Es-ow-kAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCg-Gz-0EV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
