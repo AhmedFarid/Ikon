@@ -26,25 +26,34 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var type = ""
     var colorsent = ""
     
-    var price = [issuePriceAPI]()
+    var price = 0
     
     var service = ["visit",
                    "maintenance"
     ]
-    var color = ["White",
-                 "Red",
-                 "Gold",
-                 "Silver",
-                 "Black"
-    ]
+    var color = [colorAPI]()
     var model = [maintanceAPI]()
     var issue = [isuueAPI]()
     //data..........................................
     override func viewDidLoad() {
         super.viewDidLoad()
+        handelRefreshcolor()
         handelRefreshIssue()
         handelRefresh()
+        print(price)
     }
+    
+    fileprivate func handelRefreshcolor() {
+        API.colorList { (error: Error?, colors: [colorAPI]?) in
+            if let coloerss = colors {
+                //print("here3 \(issues)")
+                self.color = coloerss
+                self.colorPikerView.reloadAllComponents()
+            }
+        }
+        
+    }
+    
     fileprivate func handelRefreshIssue() {
         API.issueList { (error: Error?, issuee: [isuueAPI]?) in
             if let issues = issuee {
@@ -69,29 +78,41 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBAction func getPrice(_ sender: Any) {
         
         let apiToken = "11"
-        APIGetPrice.getPrice(apiToken: apiToken, productId: productId, issueId: issueId, type: type) { (error: Error?, pricee: [issuePriceAPI]?) in
-            if let prices = pricee {
-                print("pricr\(prices)")
-                self.price = prices
-                print("last  \(self.price)")
-            }else {
-                print("Error in price")
+        APIGetPrice.getPrice(apiToken: apiToken, productId: productId, issueId: issueId, type: type) { (error, price) in
+            if error == nil {
+                self.price = price!
+                print("aa  \(self.price)")
+                self.performSegue(withIdentifier: "getPrice", sender: price)
             }
         }
-        performSegue(withIdentifier: "getPrice", sender: price)
     }
     //Actions.......................................
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let MaintanceLocationVC = segue.destination as? maintanceLocationVC else { return }
+        MaintanceLocationVC.priceValue = sender as! Int
+        MaintanceLocationVC.color = colorsent 
+        MaintanceLocationVC.type = type 
+        MaintanceLocationVC.sparePart = productId 
+        MaintanceLocationVC.issue = issueId 
+        
+    }
+//    var productId = ""
+//    var issueId = ""
+//    var type = ""
+//    var colorsent = ""
+
     
     //pikerviewFuncs................................
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView.tag == 0 {
             return 1
-        }else if pickerView.tag == 1 {
+        } else if pickerView.tag == 1 {
             return 1
-        }else if pickerView.tag == 2{
+        } else if pickerView.tag == 2{
             return 1
-        }else {
+        } else {
             return 1
         }
     }
@@ -116,12 +137,12 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }else if pickerView.tag == 1 {
             return model[row].productsName
         }else if pickerView.tag == 2 {
-            return color[row]
+            return color[row].color
         }else {
             return issue[row].issueType
         }
     }
-    //pikerviewFuncs................................
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
@@ -131,14 +152,12 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             self.productId = model[row].productsId
             print(productId)
         }else if pickerView.tag == 2 {
-            self.colorsent = color[row]
+            self.colorsent = color[row].color
             print(colorsent)
         }else {
-            self.issueId = issue[row].issueId
+            self.issueId = issue[row].issueType
             print(issueId)
         }
-        
     }
-    
-    
+    //pikerviewFuncs................................
 }

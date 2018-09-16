@@ -33,7 +33,7 @@ extension API {
                 case .success(let value):
                     let json = JSON(value)
                     
-                    guard let dataArray = json["data"]["products"].array else {
+                    guard let dataArray = json["data"]["SpareParts"].array else {
                         completion(nil , nil)
                         return
                     }
@@ -90,6 +90,50 @@ extension API {
                         
                     }
                     completion(nil, issueList)
+                }
+        }
+    }
+    
+    class func colorList(completion: @escaping (_ error: Error?, _ colorLists: [colorAPI]?)->Void) {
+        let url = URLs.getColorList
+        
+        let api_token = "11"
+        let lang = "ar"
+        
+        let parameters = [
+            "api_token" : api_token,
+            "lang" : lang
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                
+                switch response.result
+                {
+                case .failure(let error):
+                    print("color \(error)")
+                    completion(error, nil)
+                    print("color \(error)")
+                    
+                case .success(let value):
+                    let json = JSON(value)
+                    
+                    guard let dataArray = json["data"]["color"].array else {
+                        completion(nil , nil)
+                        return
+                    }
+                    
+                    
+                    print("color 1 \(dataArray)")
+                    var colorlist = [colorAPI]()
+                    for data in dataArray {
+                        if let data = data.dictionary, let color = colorAPI.init(dict: data) {
+                            colorlist.append(color)
+                            print("color2 \(color)")
+                        }
+                        
+                    }
+                    completion(nil, colorlist)
                 }
         }
     }

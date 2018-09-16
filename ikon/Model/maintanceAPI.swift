@@ -35,9 +35,16 @@ class isuueAPI: NSObject {
     }
 }
 
-class issuePriceAPI {
-    var price: String = ""
+class colorAPI: NSObject {
+    
+    var color: String
+    
+    init?(dict: [String: JSON]) {
+        guard let color = dict["products_options_values_name"]?.string else { return nil}
+        self.color = color
+    }
 }
+
 
 
 

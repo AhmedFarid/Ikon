@@ -12,13 +12,16 @@ class maintanceLocationVC: UIViewController {
     
     @IBOutlet weak var priceLabel: UILabel!
     
-    var pricess: issuePriceAPI!
     
-    
+    var priceValue = 0
+    var apiToken = "11"
+    var sparePart = ""
+    var type = ""
+    var color = ""
+    var note = ""
+    var issue = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        pricess = issuePriceAPI()
-        
-        priceLabel.text = pricess.price
+        priceLabel.text = "Price: \(priceValue)"
     }
 }

@@ -8,19 +8,24 @@
 
 import Foundation
 
+typealias DownloadComplete = () -> ()
 
 struct URLs {
-    static let main = "http://ikongo.com/site/api/"
     
+    static let main = "http://ikongo.com/site/api/"
     
     static let login = main + "login"
     
     static let signUp = main + "signupMobile"
     
-    static let getListProducts = main + "productList"
+    static let getListProducts = main + "sparePartsList"
     
     static let getListIssueType = main + "issueTypeList"
     
+    static let getColorList = main + "colorList"
+    
     static let getListIssuePrice = main + "issuePrice"
+    
+    static let getPhonesData = main + "showProductShop"
     
 }
