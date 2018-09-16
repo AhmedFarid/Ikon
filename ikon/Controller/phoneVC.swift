@@ -13,30 +13,33 @@ class phoneVC: UIViewController, UICollectionViewDelegate , UICollectionViewData
 
     @IBOutlet weak var phoneShop: UICollectionView!
     
-    var phone: phones!
+    var phones = [Phone]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         phoneShop.delegate = self
         phoneShop.dataSource = self
         
-        phone = phones()
+        phonesHanleRefresh()
+        
     }
     
-    func downloadPhoneData(completed: DownloadComplete){
-        let url = URLs.getPhonesData
-        let apiToken = "11"
-        let lang = "ar"
-        
-        let parameters = [
-            "api_token": apiToken,
-            "lang": lang
-        ]
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil)
-            .responseJSON { response in
-                
+    private func phonesHanleRefresh() {
+        API.getPhoneData{ (error: Error?, phones: [Phone]?) in
+            
+            if let phones = phones {
+                self.phones = phones
+                self.phoneShop.reloadData()
+                print("phoneslast \(phones)")
+            }
+            
         }
     }
+    
+    
+    
+    
     
     //collectionView Func..............................................phoneCell
     
@@ -45,12 +48,18 @@ class phoneVC: UIViewController, UICollectionViewDelegate , UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return phones.count	
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = phoneShop.dequeueReusableCell(withReuseIdentifier: "phoneCell", for: indexPath)
-        return cell
+        if let cell = phoneShop.dequeueReusableCell(withReuseIdentifier: "phoneCell", for: indexPath) as? phonesCell {
+            let phone = phones[indexPath.row]
+            cell.configuerCell(phone: phone)
+            return cell
+        } else {
+            return phonesCell()
+        }
+        
     }
     
     

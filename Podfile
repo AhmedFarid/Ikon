@@ -8,9 +8,8 @@ target 'ikon' do
   use_frameworks!
 
   # Pods for ikon
-  pod 'Firebase/Core'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'Firebase/Auth'
+  pod 'Kingfisher'
 
 end

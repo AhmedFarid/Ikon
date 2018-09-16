@@ -1,54 +1,47 @@
-//
-//  API+Phones.swift
-//  ikon
-//
-//  Created by FARIDO on 9/16/18.
-//  Copyright © 2018 FARIDO. All rights reserved.
-//
-
-import UIKit
+import Foundation
 import Alamofire
+import SwiftyJSON
 
-class phones {
-    var _phoneName: String!
-    var _phoneDescription: String!
-    var _phoneModel: String!
-    var _phoneImage: String!
-    var _phonePrice: String!
+extension API {
     
-    var phoneName: String {
-        if _phoneName == nil {
-            _phoneName = ""
+    class func getPhoneData(completion: @escaping (_ error: Error?,_ phones: [Phone]?)-> Void) {
+        let url = URLs.getPhonesData
+        let api_token = "11"
+        let lang = "ar"
+        
+        let parameters = [
+            "api_token" : api_token,
+            "lang" : lang
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                switch response.result
+                {
+                case .failure(let error):
+                    print(error)
+                    completion(error, nil)
+                    print(error)
+                    
+                case .success(let value):
+                    let json = JSON(value)
+                    print("phonesData \(json)")
+                    
+                    guard let dataArray = json["data"]["products"].array else {
+                        completion(nil , nil)
+                        return
+                    }
+                    print("PhonesData2 \(dataArray)")
+                    var productList = [Phone]()
+                    for products in dataArray {
+                        if let  products = products.dictionary, let prodecta = Phone.init(dict: products) {
+                            productList.append(prodecta)
+                            print("PhonesData3 \(prodecta)")
+                        }
+                    }
+                    completion(nil, productList)
+                }
         }
-        return _phoneName
+        
     }
-    
-    var phoneDescription: String {
-        if _phoneDescription == nil {
-            _phoneDescription = ""
-        }
-        return _phoneDescription
-    }
-    
-    var phoneModel: String {
-        if _phoneModel == nil {
-            _phoneModel = ""
-        }
-        return _phoneModel
-    }
-    
-    var phoneImage: String {
-        if _phoneImage == nil {
-            _phoneImage = ""
-        }
-        return _phoneImage
-    }
-    
-    var phonePrice: String {
-        if _phonePrice == nil {
-            _phonePrice = ""
-        }
-        return _phonePrice
-    }
-    
 }
