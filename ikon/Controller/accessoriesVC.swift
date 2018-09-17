@@ -57,9 +57,19 @@ class accessoriesVC: UIViewController, UICollectionViewDataSource, UICollectionV
         }else {
             return accessoriesCell()
         }
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "accessoresDetials", sender: accessorers[indexPath.row])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let distantion = segue.destination as? accesoresDetialsVC{
+            if let accessore = sender as?  Accessores {
+                distantion.singelItem = accessore
+            }
+        }
     }
     
     
-    //collectionView Func..............................................phoneCell
+    //collectionView Func..............................................phoneCellaccessoresDetials
 }

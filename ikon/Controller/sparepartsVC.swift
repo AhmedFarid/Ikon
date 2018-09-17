@@ -53,4 +53,16 @@ class sparepartsVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "sparDitels", sender: sparParts[indexPath.row])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let distantion = segue.destination as? spaerPartsDetailsVC{
+            if let phone = sender as? SparParts {
+                distantion.singelItem = phone
+            }
+        }
+    }
+    
 }

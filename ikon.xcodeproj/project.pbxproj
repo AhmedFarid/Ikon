@@ -24,6 +24,8 @@
 		69429C8D214EAD3300B93FCF /* shoping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69429C8C214EAD3200B93FCF /* shoping.swift */; };
 		69429C8F214EBC8400B93FCF /* phonesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69429C8E214EBC8400B93FCF /* phonesCell.swift */; };
 		6959A16C214FCB3700B18680 /* phonesDetials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959A16B214FCB3700B18680 /* phonesDetials.swift */; };
+		6959A16E214FE2CD00B18680 /* accesoresDetialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959A16D214FE2CD00B18680 /* accesoresDetialsVC.swift */; };
+		6959A170214FE92100B18680 /* spaerPartsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959A16F214FE92100B18680 /* spaerPartsDetailsVC.swift */; };
 		69619B66213D3C3B0076B971 /* GuestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69619B65213D3C3B0076B971 /* GuestCollectionViewCell.swift */; };
 		69624424214706B900596795 /* API+getPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69624423214706B900596795 /* API+getPrice.swift */; };
 		696F59F9213BFC6F007EB59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F59F8213BFC6F007EB59C /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		69429C8C214EAD3200B93FCF /* shoping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shoping.swift; sourceTree = "<group>"; };
 		69429C8E214EBC8400B93FCF /* phonesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phonesCell.swift; sourceTree = "<group>"; };
 		6959A16B214FCB3700B18680 /* phonesDetials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phonesDetials.swift; sourceTree = "<group>"; };
+		6959A16D214FE2CD00B18680 /* accesoresDetialsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accesoresDetialsVC.swift; sourceTree = "<group>"; };
+		6959A16F214FE92100B18680 /* spaerPartsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaerPartsDetailsVC.swift; sourceTree = "<group>"; };
 		69619B65213D3C3B0076B971 /* GuestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCollectionViewCell.swift; sourceTree = "<group>"; };
 		69624423214706B900596795 /* API+getPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+getPrice.swift"; sourceTree = "<group>"; };
 		696F59F5213BFC6F007EB59C /* ikon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ikon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,8 @@
 				6921FD63214F01F100BDC630 /* accessoriesVC.swift */,
 				69BD7D41214F20C900A1FBB2 /* sparepartsVC.swift */,
 				6959A16B214FCB3700B18680 /* phonesDetials.swift */,
+				6959A16D214FE2CD00B18680 /* accesoresDetialsVC.swift */,
+				6959A16F214FE92100B18680 /* spaerPartsDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,12 +360,14 @@
 				6913A2FE2142B7C300B7A793 /* API+Mantince.swift in Sources */,
 				69BD7D44214F2A3000A1FBB2 /* sparPartsCell.swift in Sources */,
 				6959A16C214FCB3700B18680 /* phonesDetials.swift in Sources */,
+				6959A16E214FE2CD00B18680 /* accesoresDetialsVC.swift in Sources */,
 				69D9074F213F30FC0030469F /* emailValidation.swift in Sources */,
 				692259B6214139BF00D83D40 /* helper.swift in Sources */,
 				69D90748213F19780030469F /* API.swift in Sources */,
 				69157E58213C40FB0091B208 /* MobileRepairVC.swift in Sources */,
 				696F5A0E213C0618007EB59C /* signInVC.swift in Sources */,
 				69429C8D214EAD3300B93FCF /* shoping.swift in Sources */,
+				6959A170214FE92100B18680 /* spaerPartsDetailsVC.swift in Sources */,
 				696F59F9213BFC6F007EB59C /* AppDelegate.swift in Sources */,
 				69619B66213D3C3B0076B971 /* GuestCollectionViewCell.swift in Sources */,
 				6921FD66214F0CF900BDC630 /* accessoriesCell.swift in Sources */,
