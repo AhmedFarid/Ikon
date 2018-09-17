@@ -62,7 +62,18 @@ class phoneVC: UIViewController, UICollectionViewDelegate , UICollectionViewData
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "phoneDetails", sender: phones[indexPath.row])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let distantion = segue.destination as? phonesDetials{
+            if let phone = sender as? Phone {
+                distantion.singelItem = phone
+            }
+        }
+    }
     
-    //collectionView Func..............................................phoneCell
+    
+    //collectionView Func..............................................phoneCell/phoneDetails
     
 }

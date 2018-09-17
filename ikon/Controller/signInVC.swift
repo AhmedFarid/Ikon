@@ -27,12 +27,12 @@ class signInVC: UIViewController{
         guard let email = emailTF.text, !email.isEmpty else { return }
         guard let paswword  = passwwordTF.text, !paswword.isEmpty else { return }
         let Api_token = "123"
-        let parms = [
-            "email": email,
-            "password": paswword,
-            "api_token": Api_token
-        ]
-//        APIGetPrice.POST(url: URLs.login, parameters: parms, header: nil) { (success, result) in
+//        //let parms = [
+//            "email": email,
+//            "password": paswword,
+//            "api_token": Api_token
+//        ]
+////        APIGetPrice.POST(url: URLs.login, parameters: parms, header: nil) { (success, result) in
 //            if success {
 //
 //            } else {

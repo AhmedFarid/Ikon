@@ -7,29 +7,59 @@
 //
 
 import UIKit
+import Alamofire
 
-class accessoriesVC: UIViewController {
+class accessoriesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var accessorersVC: UICollectionView!
+    
+    var accessorers = [Accessores]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        accessorersVC.delegate = self
+        accessorersVC.dataSource = self
+        accersosHanleRefresh()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func accersosHanleRefresh() {
+        API.getAcceroesData{ (error: Error?, accessorers: [Accessores]?) in
+            
+            if let accessorers = accessorers {
+                self.accessorers = accessorers
+                self.accessorersVC.reloadData()
+                print("phoneslast \(accessorers)")
+            }
+            
+        }
     }
-    */
-
+    
+    
+    
+    //collectionView Func..............................................phoneCell
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return accessorers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = accessorersVC.dequeueReusableCell(withReuseIdentifier: "accessoresCell", for: indexPath) as? accessoriesCell {
+            let accessore = accessorers[indexPath.row]
+            cell.configuerCell(accessories: accessore)
+            return cell
+        }else {
+            return accessoriesCell()
+        }
+        
+    }
+    
+    
+    //collectionView Func..............................................phoneCell
 }

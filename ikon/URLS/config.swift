@@ -28,4 +28,8 @@ struct URLs {
     
     static let getPhonesData = main + "showProductShop"
     
+    static let getAceessorisData = main + "showAccessoriesShop"
+    
+    static let getSparePartsData = main + "showSparePartsShop"
+    
 }
