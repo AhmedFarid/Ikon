@@ -17,13 +17,13 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var modelPikerView: UIPickerView!
     @IBOutlet weak var colorPikerView: UIPickerView!
     @IBOutlet weak var issuePikerview: UIPickerView!
-    @IBOutlet weak var otherIssueTF: UITextField!
+    @IBOutlet weak var noteTF: UITextView!
     //outLets.......................................
     //data..........................................
     
     var productId = ""
     var issueId = ""
-    var type = ""
+    var type = "visit"
     var colorsent = ""
     
     var price = 0
@@ -94,15 +94,11 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         MaintanceLocationVC.color = colorsent 
         MaintanceLocationVC.type = type 
         MaintanceLocationVC.sparePart = productId 
-        MaintanceLocationVC.issue = issueId 
-        
+        MaintanceLocationVC.issue = issueId
+        if let not = noteTF.text{
+        MaintanceLocationVC.note = not
+        }
     }
-//    var productId = ""
-//    var issueId = ""
-//    var type = ""
-//    var colorsent = ""
-
-    
     //pikerviewFuncs................................
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

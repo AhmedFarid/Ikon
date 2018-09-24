@@ -7,11 +7,15 @@
     //
     
     import UIKit
+    import CoreData
     
+    //import CoreLocation
     @UIApplicationMain
     class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var window: UIWindow?
+        
+        //var locationManager: CLLocationManager?
         
         
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -23,7 +27,8 @@
                 let tab = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "swrer")
                 window?.rootViewController = tab
             }
-            
+            //locationManager = CLLocationManager()
+            //locationManager?.requestWhenInUseAuthorization()
             return true
         }
         
@@ -50,5 +55,33 @@
         }
         
         
+        // MARK: - Core Data Stack
+        
+        lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "Model")
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
+        
+        
+        // MARK: - Core Data Saving Support
+        func saveContext(){
+            let context = persistentContainer.viewContext
+            if context.hasChanges{
+                do {
+                    try context.save()
+                } catch {
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
+        }
     }
+    
+    let ad = UIApplication.shared.delegate as! AppDelegate
+    let context = ad.persistentContainer.viewContext
     

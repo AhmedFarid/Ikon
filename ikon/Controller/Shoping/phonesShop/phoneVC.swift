@@ -20,8 +20,8 @@ class phoneVC: UIViewController, UICollectionViewDelegate , UICollectionViewData
         super.viewDidLoad()
         phoneShop.delegate = self
         phoneShop.dataSource = self
-        
         phonesHanleRefresh()
+        print("fff\(phones)")
         
     }
     
@@ -55,6 +55,7 @@ class phoneVC: UIViewController, UICollectionViewDelegate , UICollectionViewData
         if let cell = phoneShop.dequeueReusableCell(withReuseIdentifier: "phoneCell", for: indexPath) as? phonesCell {
             let phone = phones[indexPath.row]
             cell.configuerCell(phone: phone)
+            //print("ssdd \(cell)")
             return cell
         } else {
             return phonesCell()

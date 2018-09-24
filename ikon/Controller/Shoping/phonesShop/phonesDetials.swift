@@ -36,5 +36,17 @@ class phonesDetials: UIViewController {
         
     }
     @IBAction func addToCartBtn(_ sender: Any) {
+        let newCart = Cart(context: context)
+        newCart.productId = singelItem?.productsId
+        newCart.productName = singelItem?.productsName
+        newCart.productDes = singelItem?.productsDescription
+        newCart.productPrice = singelItem?.productsPrice
+        newCart.productImage = singelItem?.productsImage
+        do{
+        ad.saveContext()
+            print("data saved in corData")
+        } catch {
+            print("error in coreData")
+        }
     }
 }
