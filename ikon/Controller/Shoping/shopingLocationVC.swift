@@ -38,6 +38,8 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
     var long = "111"
     var totalPrice = 0
     var products = ""
+    var lats = 0.0
+    var longs = 0.0
     
     var locagtionManger = CLLocationManager()
     var locationManageer: CLLocationManager?
@@ -51,21 +53,28 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
         
         locationManageer = CLLocationManager()
         locationManageer?.requestWhenInUseAuthorization()
+        
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        print("long\(longitude)")
+        self.longs = longitude
+        self.long = "\(longitude)"
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        print("lat\(latitude)")
+        self.lat = "\(latitude)"
+        self.lats = latitude
     }
 
     
     
 
     @IBAction func getLocationBTN(_ sender: Any) {
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        self.long = "\(longitude)"
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        self.lat = "\(latitude)"
         let userLocation = mapLocation.userLocation
         let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)! ,1000,1000)
         mapLocation.setRegion(region, animated: true)
-        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
-        print("long\(longitude)")
-        self.long = "\(longitude)"
-        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
-        print("lat\(latitude)")
-        self.lat = "\(latitude)"
         
         let location = CLLocation(latitude: latitude, longitude: longitude)
         
@@ -78,8 +87,7 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
             
             if (placemarks?.count)! > 0 {
                 let pm = placemarks?[0] as CLPlacemark?
-                var address: String!
-                address = (pm?.thoroughfare)! + " " + (pm?.locality)! + " " + (pm?.country)!
+                let address = (pm?.thoroughfare)! + " " + (pm?.locality)! + " " + (pm?.country)!
                 print("addersssss \(address)")
                 self.adderssTXT.text = address
             }else {
@@ -88,7 +96,6 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
         })
         
     }
-    
     @IBAction func orderShopBTN(_ sender: Any) {
         
         guard let phone = phoneTXT.text, !phone.isEmpty else {

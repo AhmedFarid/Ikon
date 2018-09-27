@@ -14,9 +14,9 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tabelView: UITableView!
     
     var carts = [Cart]()
+    var delete: Cart?
     var totalPrice = 0.0
     var productsString = ""
-    var postion = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func getData() {
         for i in carts {
             self.productsString = ("\(self.productsString + i.productId! + ",")")
-            self.totalPrice = self.totalPrice + Double(i.productPrice ?? "")!
+            //self.totalPrice = self.totalPrice + Double(i.productPrice ?? "")!
         }
         print(productsString)
         print(totalPrice)
@@ -53,6 +53,10 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 tableView.beginUpdates()
                 self.carts.remove(at: indexPath.row)
                 // delete from core data
+                if self.delete != nil {
+                context.delete(self.delete!)
+                ad.saveContext()
+                }
                 
                 tableView.endUpdates()
                 tableView.reloadData()
@@ -69,6 +73,11 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.showAlert(title: "Filed to request order", message: "please login frist")
             return
         }
+        
+//        guard self.totalPrice != 0.0 else {
+//            self.showAlert(title: "Filed to request order", message: "Add somthing to cart frist")
+//            return
+//        }
         self.performSegue(withIdentifier: "getData", sender: nil)
         
     }
