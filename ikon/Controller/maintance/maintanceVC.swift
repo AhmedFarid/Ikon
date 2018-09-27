@@ -17,14 +17,16 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var modelPikerView: UIPickerView!
     @IBOutlet weak var colorPikerView: UIPickerView!
     @IBOutlet weak var issuePikerview: UIPickerView!
+    @IBOutlet weak var phonePikerView: UIPickerView!
     @IBOutlet weak var noteTF: UITextView!
     //outLets.......................................
     //data..........................................
     
     var productId = ""
-    var issueId = ""
+    var issueId = "any"
     var type = "visit"
-    var colorsent = ""
+    var colorsent = "any"
+    var phoneId = ""
     
     var price = 0
     
@@ -34,13 +36,24 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var color = [colorAPI]()
     var model = [maintanceAPI]()
     var issue = [isuueAPI]()
+    var phone = [Phone]()
     //data..........................................
     override func viewDidLoad() {
         super.viewDidLoad()
         handelRefreshcolor()
         handelRefreshIssue()
-        handelRefresh()
+        //handelRefresh()
+        handelRefreshphones()
         print(price)
+    }
+    
+    fileprivate func handelRefreshphones() {
+        API.getPhoneData { (error: Error?, phones: [Phone]?) in
+            if let phoness = phones {
+                self.phone = phoness
+                self.phonePikerView.reloadAllComponents()
+            }
+        }
     }
     
     fileprivate func handelRefreshcolor() {
@@ -65,9 +78,9 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
     }
     fileprivate func handelRefresh() {
-        API.productList { (error: Error?, prodect: [maintanceAPI]?) in
+        API.productList(prodactId: phoneId) { (error: Error?, prodect: [maintanceAPI]?) in
             if let prodects = prodect {
-                //print("here \(prodects)")
+                print("here \(prodects)")
                 self.model = prodects
                 self.modelPikerView.reloadAllComponents()
                 
@@ -76,9 +89,13 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     //Actions.......................................
     @IBAction func getPrice(_ sender: Any) {
+        guard let note = noteTF.text, !note.isEmpty else {
+            self.showAlert(title: "Order Filed", message: "enter any other issue description")
+            return
+        }
         
         let apiToken = "11"
-        APIGetPrice.getPrice(apiToken: apiToken, productId: productId, issueId: issueId, type: type) { (error, price) in
+        APIGetPrice.getPrice(apiToken: apiToken, productId: productId, productphoneId: phoneId, type: type) { (error, price) in
             if error == nil {
                 self.price = price!
                 print("aa  \(self.price)")
@@ -95,6 +112,7 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         MaintanceLocationVC.type = type 
         MaintanceLocationVC.sparePart = productId 
         MaintanceLocationVC.issue = issueId
+        MaintanceLocationVC.productId = phoneId
         if let not = noteTF.text{
         MaintanceLocationVC.note = not
         }
@@ -108,7 +126,10 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             return 1
         } else if pickerView.tag == 2{
             return 1
-        } else {
+        } else if pickerView.tag == 5 {
+            return 1
+        }
+        else {
             return 1
         }
     }
@@ -121,7 +142,10 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             return model.count
         }else if pickerView.tag == 2 {
             return color.count
-        }else {
+        }else if pickerView.tag == 5{
+            return phone.count
+        }
+        else {
             return issue.count
         }
         
@@ -134,7 +158,10 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             return model[row].productsName
         }else if pickerView.tag == 2 {
             return color[row].color
-        }else {
+        }else if pickerView.tag == 5 {
+            return phone[row].productsName
+        }
+        else {
             return issue[row].issueType
         }
     }
@@ -150,7 +177,12 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }else if pickerView.tag == 2 {
             self.colorsent = color[row].color
             print(colorsent)
-        }else {
+        }else if pickerView.tag == 5 {
+            self.phoneId = phone[row].productsId
+            handelRefresh()
+            print(phoneId)
+        }
+        else {
             self.issueId = issue[row].issueType
             print(issueId)
         }

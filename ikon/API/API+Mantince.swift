@@ -9,7 +9,7 @@ import SwiftyJSON
 
 extension API {
     
-    class func productList(completion: @escaping (_ error: Error?, _ productList: [maintanceAPI]?)->Void) {
+    class func productList(prodactId: String, completion: @escaping (_ error: Error?, _ productList: [maintanceAPI]?)->Void) {
         let url = URLs.getListProducts
         
         let api_token = "11"
@@ -17,9 +17,9 @@ extension API {
         
         let parameters = [
             "api_token" : api_token,
-            "lang" : lang
+            "lang" : lang,
+            "product_id":prodactId
         ]
-        
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
                 

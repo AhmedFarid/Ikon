@@ -14,21 +14,31 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tabelView: UITableView!
     
     var carts = [Cart]()
-    
+    var totalPrice = 0.0
+    var productsString = ""
+    var postion = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         tabelView.dataSource = self
         tabelView.delegate = self
         
         loadCarts()
+        getData()
     }
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func getData() {
+        for i in carts {
+            self.productsString = ("\(self.productsString + i.productId! + ",")")
+            self.totalPrice = self.totalPrice + Double(i.productPrice ?? "")!
+        }
+        print(productsString)
+        print(totalPrice)
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return carts.count
@@ -38,6 +48,15 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = tabelView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as? cartCell{
             let cart = carts[indexPath.row]
             cell.configuerCell(cart: cart)
+            cell.deleteAction = {
+                // delete row
+                tableView.beginUpdates()
+                self.carts.remove(at: indexPath.row)
+                // delete from core data
+                
+                tableView.endUpdates()
+                tableView.reloadData()
+            }
             return cell
         }else {
             return cartCell()
@@ -45,15 +64,29 @@ class cartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    @IBAction func requestOrder(_ sender: Any) {
+        guard (helper.getApiToken() != nil)  else {
+            self.showAlert(title: "Filed to request order", message: "please login frist")
+            return
+        }
+        self.performSegue(withIdentifier: "getData", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let locationVC = segue.destination as? shopingLocationVC else { return }
+        locationVC.totalPrice = Int(totalPrice)
+        locationVC.products = productsString
+    }
+    
+    
     func loadCarts() {
         let fetchRequest:NSFetchRequest<Cart> = Cart.fetchRequest()
         do{
             carts = try context.fetch(fetchRequest)
             tabelView.reloadData()
         } catch{
-            
+            print(error)
         }
     }
-    
-    
 }

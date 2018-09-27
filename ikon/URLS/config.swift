@@ -34,4 +34,6 @@ struct URLs {
     
     static let orderMaintenance = main + "maintenanceOrder"
     
+    static let shopOrder = main + "shopOrder"
+    
 }

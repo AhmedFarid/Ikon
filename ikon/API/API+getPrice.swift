@@ -28,12 +28,12 @@ class APIGetPrice: NSObject {
         }
     }
     
-    class func getPrice(apiToken: String, productId: String, issueId: String, type: String, completion: @escaping (_ error: Error?, _ priceVA: Int?)-> Void) {
+    class func getPrice(apiToken: String, productId: String, productphoneId: String, type: String, completion: @escaping (_ error: Error?, _ priceVA: Int?)-> Void) {
         
         let parameters = [
             "api_token": apiToken,
             "sparePart": productId,
-            "issue_id": issueId,
+            "product_id": productphoneId,
             "type": type
         ]
 

@@ -8,6 +8,6 @@
         <attribute name="productPrice" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Cart" positionX="349" positionY="-384" width="128" height="118"/>
+        <element name="Cart" positionX="349" positionY="-384" width="128" height="120"/>
     </elements>
 </model>

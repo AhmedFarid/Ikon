@@ -27,6 +27,10 @@ class maintanceLocationVC: UIViewController, MKMapViewDelegate {
     var issue = ""
     var lat = "111"
     var long = "111"
+    var productId = ""
+    
+    var lats = 0.0
+    var longs = 0.0
     
     
     
@@ -47,20 +51,24 @@ class maintanceLocationVC: UIViewController, MKMapViewDelegate {
         locationManageer = CLLocationManager()
         locationManageer?.requestWhenInUseAuthorization()
     
-    
-    }
-    
-    @IBAction func getLocationBTN(_ sender: Any) {
-        
-        let	userLocation = mapLocation.userLocation
-        let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)! ,1000,1000)
-        mapLocation.setRegion(region, animated: true)
         let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
         print("long\(longitude)")
+        self.longs = longitude
         self.long = "\(longitude)"
         let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
         print("lat\(latitude)")
         self.lat = "\(latitude)"
+        self.lats = latitude
+    }
+    
+    @IBAction func getLocationBTN(_ sender: Any) {
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        self.long = "\(longitude)"
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        self.lat = "\(latitude)"
+        let userLocation = mapLocation.userLocation
+        let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)! ,1000,1000)
+        mapLocation.setRegion(region, animated: true)
         
         let location = CLLocation(latitude: latitude, longitude: longitude)
         
@@ -73,7 +81,7 @@ class maintanceLocationVC: UIViewController, MKMapViewDelegate {
             
             if (placemarks?.count)! > 0 {
                 let pm = placemarks?[0] as CLPlacemark?
-                let address = (pm?.subThoroughfare)! + " " + (pm?.thoroughfare)! + (pm?.locality)! + "," + (pm?.administrativeArea)! + " " + (pm?.postalCode)! + " " + (pm?.isoCountryCode)!
+                let address = (pm?.thoroughfare)! + " " + (pm?.locality)! + " " + (pm?.country)!
                 print("addersssss \(address)")
                 self.adderssTXT.text = address
             }else {
@@ -84,9 +92,22 @@ class maintanceLocationVC: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func orderMaintBTN(_ sender: Any) {
-        API_Orders.maintenanceOrder(apiToken: apiToken, sparePart: sparePart, type: type, color: color, note: note, address: adderssTXT.text!, latitude: lat, longitude: long, price: "\(priceValue)", issue: issue) { (error: Error?, success: Bool) in
+        guard let phone = phoneTXT.text, !phone.isEmpty else {
+            self.showAlert(title: "Order Filed", message: "enter your phone")
+            return
+        }
+        
+        guard let addreess = adderssTXT.text, !addreess.isEmpty else {
+            self.showAlert(title: "Order Filed", message: "enter your address or click in get location")
+            return
+        }
+        API_Orders.maintenanceOrder(apiToken: apiToken, sparePart: sparePart, type: type, color: color, note: note, address: addreess, latitude: lat, longitude: long, price: "\(priceValue)", issue: issue, phone: phone, product_id: productId) { (error: Error?, success: Bool) in
             if success {
                 self.showAlert(title: "Order Success", message: "Your order is successfull go to main page")
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let abcViewController = storyboard.instantiateViewController(withIdentifier: "gustMain") as! guestVC
+//                abcViewController.title = "ABC"
+//                self.navigationController?.pushViewController(abcViewController, animated: true)
             }else{
                 self.showAlert(title: "Order Filed", message: "please login frist")
             }

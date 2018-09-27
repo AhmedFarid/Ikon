@@ -35,6 +35,10 @@ class accesoresDetialsVC: UIViewController {
         
     }
     @IBAction func addToCart(_ sender: Any) {
+        guard (helper.getApiToken() != nil)  else {
+            self.showAlert(title: "Filed to Add Cart", message: "please login frist")
+            return
+        }
         let newCart = Cart(context: context)
         newCart.productId = singelItem?.productsId
         newCart.productName = singelItem?.productsName
@@ -43,7 +47,7 @@ class accesoresDetialsVC: UIViewController {
         newCart.productImage = singelItem?.productsImage
         do{
             ad.saveContext()
-            print("data saved in corData")
+            self.showAlert(title: "Add to cart", message: "Added to cart successfully go to cart to request order")
         } catch {
             print("error in coreData")
         }
