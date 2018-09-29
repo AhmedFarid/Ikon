@@ -11,5 +11,6 @@ target 'ikon' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'IQKeyboardManagerSwift'
 
 end

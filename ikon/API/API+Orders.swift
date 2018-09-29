@@ -58,7 +58,7 @@ class API_Orders: NSObject {
     class func shopOrder(address: String, latitude: String, longitude: String, phone: String, total_price: String, products: String , completion: @escaping (_ error: Error?, _ success: Bool)->Void){
         
         let apiToken = "11"
-        let lang = "en"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         let postCode = "1111"
         let city = "city"
         let country = "country"

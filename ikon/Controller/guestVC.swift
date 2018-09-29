@@ -44,4 +44,23 @@ class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         }
     }
     
+    @IBAction func langBTN(_ sender: Any) {
+        
+        if Language.currentLanguage() == "ar" {
+            Language.setAppLanguage(lang: "en-US")
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        }else{
+            Language.setAppLanguage(lang: "ar")
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        }
+        
+        
+        let window = (UIApplication.shared.delegate as? AppDelegate)?.window
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        window?.rootViewController = sb.instantiateViewController(withIdentifier: "swrer")
+        UIView.transition(with: window!, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        
+        
+        
+    }
 }

@@ -51,20 +51,20 @@ class maintanceLocationVC: UIViewController, MKMapViewDelegate {
         locationManageer = CLLocationManager()
         locationManageer?.requestWhenInUseAuthorization()
     
-        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude) ?? 0.0
         print("long\(longitude)")
         self.longs = longitude
         self.long = "\(longitude)"
-        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude) ?? 0.0
         print("lat\(latitude)")
         self.lat = "\(latitude)"
         self.lats = latitude
     }
     
     @IBAction func getLocationBTN(_ sender: Any) {
-        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude) ?? 0.0
         self.long = "\(longitude)"
-        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude) ?? 0.0
         self.lat = "\(latitude)"
         let userLocation = mapLocation.userLocation
         let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)! ,1000,1000)
@@ -93,23 +93,27 @@ class maintanceLocationVC: UIViewController, MKMapViewDelegate {
     
     @IBAction func orderMaintBTN(_ sender: Any) {
         guard let phone = phoneTXT.text, !phone.isEmpty else {
-            self.showAlert(title: "Order Filed", message: "enter your phone")
+            let message = NSLocalizedString("enter your phone", comment: "msg list lang")
+            self.showAlert(title: "Order Filed", message: message)
             return
         }
         
         guard let addreess = adderssTXT.text, !addreess.isEmpty else {
-            self.showAlert(title: "Order Filed", message: "enter your address or click in get location")
+            let message = NSLocalizedString("enter your address or click in get location", comment: "msg list lang")
+            self.showAlert(title: "Order Filed", message: message)
             return
         }
         API_Orders.maintenanceOrder(apiToken: apiToken, sparePart: sparePart, type: type, color: color, note: note, address: addreess, latitude: lat, longitude: long, price: "\(priceValue)", issue: issue, phone: phone, product_id: productId) { (error: Error?, success: Bool) in
             if success {
-                self.showAlert(title: "Order Success", message: "Your order is successfull go to main page")
+                let message = NSLocalizedString("Your order is successfull go to main page", comment: "msg list lang")
+                self.showAlert(title: "Order Success", message: message)
 //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                let abcViewController = storyboard.instantiateViewController(withIdentifier: "gustMain") as! guestVC
 //                abcViewController.title = "ABC"
 //                self.navigationController?.pushViewController(abcViewController, animated: true)
             }else{
-                self.showAlert(title: "Order Filed", message: "please login frist")
+                let message = NSLocalizedString("please login frist", comment: "msg list lang")
+                self.showAlert(title: "Order Filed", message: message)
             }
             }
         }

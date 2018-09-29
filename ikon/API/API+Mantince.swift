@@ -13,7 +13,7 @@ extension API {
         let url = URLs.getListProducts
         
         let api_token = "11"
-        let lang = "ar"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         
         let parameters = [
             "api_token" : api_token,
@@ -54,7 +54,7 @@ extension API {
         let url = URLs.getListIssueType
         
         let api_token = "11"
-        let lang = "ar"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         
         let parameters = [
             "api_token" : api_token,
@@ -98,7 +98,7 @@ extension API {
         let url = URLs.getColorList
         
         let api_token = "11"
-        let lang = "ar"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         
         let parameters = [
             "api_token" : api_token,

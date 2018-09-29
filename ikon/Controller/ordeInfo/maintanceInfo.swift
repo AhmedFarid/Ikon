@@ -53,4 +53,13 @@ class maintanceInfo: UIViewController , UITableViewDelegate , UITableViewDataSou
             return maintIfoCEll()
         }
     }
+    
+    @IBAction func back(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "gustMain")
+        let nav = UINavigationController(rootViewController: vc)
+        if let vcs = self.revealViewController() {
+            vcs.pushFrontViewController(nav, animated: true)
+        }
+    }
 }

@@ -54,11 +54,11 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
         locationManageer = CLLocationManager()
         locationManageer?.requestWhenInUseAuthorization()
         
-        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude) ?? 0.0
         print("long\(longitude)")
         self.longs = longitude
         self.long = "\(longitude)"
-        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude) ?? 0.0
         print("lat\(latitude)")
         self.lat = "\(latitude)"
         self.lats = latitude
@@ -68,9 +68,9 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
     
 
     @IBAction func getLocationBTN(_ sender: Any) {
-        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude)!
+        let longitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.longitude) ?? 0.0
         self.long = "\(longitude)"
-        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude)!
+        let latitude :CLLocationDegrees = (self.locagtionManger.location?.coordinate.latitude) ?? 0.0
         self.lat = "\(latitude)"
         let userLocation = mapLocation.userLocation
         let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)! ,1000,1000)
@@ -99,18 +99,21 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
     @IBAction func orderShopBTN(_ sender: Any) {
         
         guard let phone = phoneTXT.text, !phone.isEmpty else {
-            self.showAlert(title: "Order Filed", message: "enter your phone")
+            let message = NSLocalizedString("enter your phone", comment: "msg list lang")
+            self.showAlert(title: "Order Filed", message: message)
             return
         }
         
         guard let addreess = adderssTXT.text, !addreess.isEmpty else {
-            self.showAlert(title: "Order Filed", message: "enter your address or click in get location")
+            let message = NSLocalizedString("enter your address or click in get location", comment: "msg list lang")
+            self.showAlert(title: "Order Filed", message: message)
             return
         }
         
         API_Orders.shopOrder(address: adderssTXT.text!, latitude: lat, longitude: long, phone: phone, total_price: "\(totalPrice)", products: products) { (error: Error?, success: Bool) in
             if success {
-                self.showAlert(title: "Order Success", message: "Your order is successfull go to main page")
+                let message = NSLocalizedString("Your order is successfull go to main page", comment: "msg list lang")
+                self.showAlert(title: "Order Success", message: message)
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 let context = delegate.persistentContainer.viewContext
                 
@@ -126,7 +129,8 @@ class shopingLocationVC: UIViewController, MKMapViewDelegate {
                 
                 
             }else{
-                self.showAlert(title: "Order Filed", message: "please login frist")
+                let message = NSLocalizedString("please login frist", comment: "msg list lang")
+                self.showAlert(title: "Order Filed", message: message)
             }
         }
     }

@@ -18,6 +18,7 @@ class cartCell: UITableViewCell {
     @IBOutlet weak var prodactImage: UIImageView!
     
     var deleteAction: (() -> Void)?
+    var delete: Cart?
     
     func configuerCell (cart: Cart) {
         prodactName.text = cart.productName
@@ -34,5 +35,10 @@ class cartCell: UITableViewCell {
     
     @IBAction func deleteBtn(_ sender: Any) {
         deleteAction?()
+        if self.delete != nil {
+            context.delete(self.delete!)
+            ad.saveContext()
+        }
+        
     }
 }

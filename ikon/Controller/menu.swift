@@ -16,9 +16,26 @@ class menu: UIViewController {
     
     
     @IBAction func orderShop(_ sender: Any) {
-        self.performSegue(withIdentifier: "getinfo", sender: nil)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "getInfo")
+        let nav = UINavigationController(rootViewController: vc)
+        if let vcs = self.revealViewController() {
+            vcs.pushFrontViewController(nav, animated: true)
+            
+        }
+        //self.performSegue(withIdentifier: "getinfo", sender: nil)
     }
     
     @IBAction func orderMaint(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "INFO")
+        let nav = UINavigationController(rootViewController: vc)
+        if let vcs = self.revealViewController() {
+            vcs.pushFrontViewController(nav, animated: true)
+            
+        }
+        //self.performSegue(withIdentifier: "getinfo", sender: nil)
     }
+    
+    
 }

@@ -38,4 +38,6 @@ struct URLs {
     
     static let getMaintenanceInfo = main + "orderMaintenanceCustomer"
     
+    static let getShopInfo = main + "orderShopCustomer"
+    
 }

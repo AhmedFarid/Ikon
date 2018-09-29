@@ -32,7 +32,8 @@ class signUp: UIViewController {
         guard let lastName = lastNameTF.text, !lastName.isEmpty else { return }
         guard let email = emailTF.text?.trimmed, !email.isEmpty else { return }
         if isValidEmail(testStr: email) == false {
-            self.showAlert(title: "SignUp Filed", message: "email not correct")
+            let message = NSLocalizedString("email not correct", comment: "msg list lang")
+            self.showAlert(title: "SignUp Filed", message: message)
         }
         guard let phone = phoneTF.text?.trimmed, !phone.isEmpty else { return }
         guard let password = passwordTF.text?.trimmed, !password.isEmpty else { return }
@@ -47,7 +48,8 @@ class signUp: UIViewController {
                 print("SignUP Seccess")
                 //move to main Page and save API token
             }else{
-                self.showAlert(title: "SignUp Filed", message: "check the your info agine or check networ")
+                let message = NSLocalizedString("check the your info agine or check networ", comment: "msg list lang")
+                self.showAlert(title: "SignUp Filed", message: message)
             }
             
         }

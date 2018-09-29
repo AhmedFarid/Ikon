@@ -1,0 +1,303 @@
+/* Class = "UILabel"; text = "Mobile Number"; ObjectID = "0K3-oU-IAU"; */
+"0K3-oU-IAU.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "1ek-UW-IOJ"; */
+"1ek-UW-IOJ.text" = "الهاتف";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1fj-Q9-YAN"; */
+"1fj-Q9-YAN.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1fS-LJ-07i"; */
+"1fS-LJ-07i.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Add to Cart"; ObjectID = "1GA-te-2YT"; */
+"1GA-te-2YT.normalTitle" = "اضف للسله";
+
+/* Class = "UITextField"; placeholder = "Email*"; ObjectID = "1wq-tM-GWR"; */
+"1wq-tM-GWR.placeholder" = "الاميل*";
+
+/* Class = "UILabel"; text = "Order Price"; ObjectID = "2wY-X2-9Nd"; */
+"2wY-X2-9Nd.text" = "سعر الطلب";
+
+/* Class = "UIButton"; normalTitle = "Get Location "; ObjectID = "3Oy-mY-UIq"; */
+"3Oy-mY-UIq.normalTitle" = "معرفه موقعي ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4FD-h4-RFY"; */
+"4FD-h4-RFY.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "4Wg-om-pJ6"; */
+"4Wg-om-pJ6.normalTitle" = "تسجيل خروج";
+
+/* Class = "UILabel"; text = "phone name"; ObjectID = "5nK-Wi-Tev"; */
+"5nK-Wi-Tev.text" = "اسم الهاتف";
+
+/* Class = "UILabel"; text = "products_price"; ObjectID = "6Lw-UX-Fsb"; */
+"6Lw-UX-Fsb.text" = "سعر المنتج";
+
+/* Class = "UILabel"; text = "IPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB Black"; ObjectID = "6nd-Bi-f3O"; */
+"6nd-Bi-f3O.text" = "IPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB Black";
+
+/* Class = "UILabel"; text = "Select a Service"; ObjectID = "7iC-Op-BfD"; */
+"7iC-Op-BfD.text" = "اختر الخدمه";
+
+/* Class = "UILabel"; text = "Other Issue"; ObjectID = "8wi-c2-hkI"; */
+"8wi-c2-hkI.text" = "مشاكل اخري";
+
+/* Class = "UILabel"; text = "products_price"; ObjectID = "8Xg-rR-bJo"; */
+"8Xg-rR-bJo.text" = "سعر المنتج";
+
+/* Class = "UIButton"; normalTitle = "Home"; ObjectID = "9SB-wb-2q0"; */
+"9SB-wb-2q0.normalTitle" = "الرئيسيه";
+
+/* Class = "UIButton"; normalTitle = "GUEST"; ObjectID = "41a-la-4KC"; */
+"41a-la-4KC.normalTitle" = "زائر";
+
+/* Class = "UIButton"; normalTitle = "Request Order"; ObjectID = "758-zN-XKm"; */
+"758-zN-XKm.normalTitle" = "تقدم بطلب";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "AcG-mw-rf5"; */
+"AcG-mw-rf5.placeholder" = "الاسم الاخير";
+
+/* Class = "UILabel"; text = "Spare"; ObjectID = "aEx-xQ-Ev3"; */
+"aEx-xQ-Ev3.text" = "غيار";
+
+/* Class = "UINavigationItem"; title = "Mobile Repair"; ObjectID = "AfW-2V-r02"; */
+"AfW-2V-r02.title" = "تصليح موبيل";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "AGD-nE-RNe"; */
+"AGD-nE-RNe.text" = "اميل";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "AQc-Ta-oXq"; */
+"AQc-Ta-oXq.text" = "اسم";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "aUl-o3-KRf"; */
+"aUl-o3-KRf.placeholder" = "العنوان";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "BFn-sj-DvP"; */
+"BFn-sj-DvP.text" = "اسم";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "BgY-Nm-tkh"; */
+"BgY-Nm-tkh.text" = "سعر";
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "blB-PN-fRB"; */
+"blB-PN-fRB.text" = "الطلابات";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "BnM-Bt-hfI"; */
+"BnM-Bt-hfI.placeholder" = "هاتف";
+
+/* Class = "UINavigationItem"; title = "Price"; ObjectID = "C9K-m5-zed"; */
+"C9K-m5-zed.title" = "السعر";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CAY-8A-W7q"; */
+"CAY-8A-W7q.text" = "Label";
+
+/* Class = "UILabel"; text = "phone name"; ObjectID = "ckL-iI-Ngj"; */
+"ckL-iI-Ngj.text" = "اسم الهاتف";
+
+/* Class = "UITextField"; placeholder = "PASSWORD"; ObjectID = "CWY-Uh-aHj"; */
+"CWY-Uh-aHj.placeholder" = "كلمه السر";
+
+/* Class = "UILabel"; text = "products_model"; ObjectID = "DBJ-Qy-Kyi"; */
+"DBJ-Qy-Kyi.text" = "نوع المنتج";
+
+/* Class = "UILabel"; text = "phone name"; ObjectID = "duA-4f-zUt"; */
+"duA-4f-zUt.text" = "اسم الهاتف";
+
+/* Class = "UIButton"; normalTitle = "Get Price"; ObjectID = "egP-gf-Ebe"; */
+"egP-gf-Ebe.normalTitle" = "معرفه السعر";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "eHr-pv-V67"; */
+"eHr-pv-V67.placeholder" = "تئكيد كلمه السر";
+
+/* Class = "UITextField"; placeholder = "Phone *"; ObjectID = "fLa-us-jXJ"; */
+"fLa-us-jXJ.placeholder" = "الهاتف *";
+
+/* Class = "UILabel"; text = "OR"; ObjectID = "FPi-H2-njw"; */
+"FPi-H2-njw.text" = "او";
+
+/* Class = "UILabel"; text = "Select a Phone"; ObjectID = "fri-rF-Lry"; */
+"fri-rF-Lry.text" = "اختار الهاتف";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "fW9-dP-IvC"; */
+"fW9-dP-IvC.text" = "العنوان";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "g8T-EF-77j"; */
+"g8T-EF-77j.text" = "النوع";
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "gbH-GI-Hui"; */
+"gbH-GI-Hui.text" = "اطلب";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "GEQ-ve-buF"; */
+"GEQ-ve-buF.text" = "الاسم";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "gUU-yk-3NK"; */
+"gUU-yk-3NK.title" = "الاسم";
+
+/* Class = "UIButton"; normalTitle = "Get Location "; ObjectID = "H0b-01-5Lq"; */
+"H0b-01-5Lq.normalTitle" = "معرفه موقعك";
+
+/* Class = "UILabel"; text = "IPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB Black"; ObjectID = "H15-RL-DY5"; */
+"H15-RL-DY5.text" = "IPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB Black";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "h83-5z-KGC"; */
+"h83-5z-KGC.placeholder" = "كلمه السر";
+
+/* Class = "UILabel"; text = "products_model"; ObjectID = "HcA-69-9bj"; */
+"HcA-69-9bj.text" = "نوع المنتج";
+
+/* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "HD3-yR-5Ra"; */
+"HD3-yR-5Ra.normalTitle" = "تسجيل";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hkD-VN-1cZ"; */
+"hkD-VN-1cZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "Hsg-0W-LzD"; */
+"Hsg-0W-LzD.text" = "سعر";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "hTU-b8-gvs"; */
+"hTU-b8-gvs.text" = "داتا";
+
+/* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "Iw2-6a-1IQ"; */
+"Iw2-6a-1IQ.normalTitle" = "تسجيل";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jpS-FW-unh"; */
+"jpS-FW-unh.text" = "Label";
+
+/* Class = "UILabel"; text = "Issue"; ObjectID = "jSw-bK-TjT"; */
+"jSw-bK-TjT.text" = "مشكله";
+
+/* Class = "UILabel"; text = "Order Price"; ObjectID = "JTm-or-yCK"; */
+"JTm-or-yCK.text" = "سعر الطلب";
+
+/* Class = "UIButton"; normalTitle = "Order Maintenace"; ObjectID = "k1Z-1q-NaW"; */
+"k1Z-1q-NaW.normalTitle" = "طلب صيانه";
+
+/* Class = "UILabel"; text = "Select a Color"; ObjectID = "K5H-ty-3bl"; */
+"K5H-ty-3bl.text" = "اختر اللون";
+
+/* Class = "UINavigationItem"; title = "Order Phone"; ObjectID = "MDd-Oz-TcD"; */
+"MDd-Oz-TcD.title" = "اطلب هاتف";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "Mf8-lO-Zgm"; */
+"Mf8-lO-Zgm.text" = "سعر";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "MqS-X3-tNZ"; */
+"MqS-X3-tNZ.normalTitle" = "تسجيل دخول";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "ngC-l2-cNc"; */
+"ngC-l2-cNc.text" = "هاتف";
+
+/* Class = "UILabel"; text = "Note"; ObjectID = "NTa-Uq-jQy"; */
+"NTa-Uq-jQy.text" = "ملحوظه";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Nww-js-PzF"; */
+"Nww-js-PzF.text" = "اسم";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "OKt-N4-deO"; */
+"OKt-N4-deO.text" = "اميل";
+
+/* Class = "UIButton"; normalTitle = "Order Maintenance"; ObjectID = "osS-Y3-a7r"; */
+"osS-Y3-a7r.normalTitle" = "طلب صيانه";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "p1A-Ro-Q2x"; */
+"p1A-Ro-Q2x.placeholder" = "العنوان";
+
+/* Class = "UIButton"; normalTitle = "Order Shop"; ObjectID = "pFJ-hU-8Vc"; */
+"pFJ-hU-8Vc.normalTitle" = "طلب شراء";
+
+/* Class = "UIButton"; normalTitle = "Order Maintenance"; ObjectID = "PIe-Tx-B56"; */
+"PIe-Tx-B56.normalTitle" = "اطللب صيانه";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "qbl-ZU-zqp"; */
+"qbl-ZU-zqp.title" = "الاسم";
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "Qic-uN-ABV"; */
+"Qic-uN-ABV.text" = "الطلابات";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "qKJ-WF-lw0"; */
+"qKJ-WF-lw0.text" = "الاميل";
+
+/* Class = "UILabel"; text = "products_price"; ObjectID = "QOr-vE-TqQ"; */
+"QOr-vE-TqQ.text" = "سعر المنتج";
+
+/* Class = "UITabBarItem"; title = "Accessores"; ObjectID = "QTq-VV-mOX"; */
+"QTq-VV-mOX.title" = "اكسسوارات";
+
+/* Class = "UITextField"; placeholder = "EMAIL"; ObjectID = "qUe-Ew-Yqh"; */
+"qUe-Ew-Yqh.placeholder" = "الاميل";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "rIY-Q8-5vy"; */
+"rIY-Q8-5vy.text" = "السعر";
+
+/* Class = "UITabBarItem"; title = "Spare Parts"; ObjectID = "rPi-wo-Rbp"; */
+"rPi-wo-Rbp.title" = "قطعه غيار";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RQ5-bx-1Os"; */
+"RQ5-bx-1Os.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "Szi-66-7Bm"; */
+"Szi-66-7Bm.text" = "العنوان";
+
+/* Class = "UILabel"; text = "Ahmed ahemd"; ObjectID = "TTS-Sh-mH7"; */
+"TTS-Sh-mH7.text" = "احمد احمد";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "u6Q-zg-by1"; */
+"u6Q-zg-by1.text" = "الاميل";
+
+/* Class = "UITextField"; placeholder = "Frist Name"; ObjectID = "UKF-DL-JHp"; */
+"UKF-DL-JHp.placeholder" = "الاسم الاول";
+
+/* Class = "UINavigationItem"; title = "Register"; ObjectID = "umS-hb-7Qp"; */
+"umS-hb-7Qp.title" = "تسجيل";
+
+/* Class = "UIButton"; normalTitle = "Add to Cart"; ObjectID = "UsG-uE-5Ni"; */
+"UsG-uE-5Ni.normalTitle" = "اضف للسله";
+
+/* Class = "UILabel"; text = "IPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB Black"; ObjectID = "vbC-uh-Sa6"; */
+"vbC-uh-Sa6.text" = "IPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB BlackIPhone 5S 32GB Black";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "vL3-cu-xQC"; */
+"vL3-cu-xQC.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vrT-ne-OXr"; */
+"vrT-ne-OXr.text" = "Label";
+
+/* Class = "UILabel"; text = "Issue"; ObjectID = "WQ6-T1-1bV"; */
+"WQ6-T1-1bV.text" = "المشكله";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "xEi-fL-LdF"; */
+"xEi-fL-LdF.text" = "السعر";
+
+/* Class = "UILabel"; text = "Select a Spare Parts"; ObjectID = "XLi-i3-fSV"; */
+"XLi-i3-fSV.text" = "اختار قطعه الغيار";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "xxN-e1-req"; */
+"xxN-e1-req.text" = "العنوان";
+
+/* Class = "UITabBarItem"; title = "Phones"; ObjectID = "YAH-HC-eZT"; */
+"YAH-HC-eZT.title" = "هواتف";
+
+/* Class = "UIButton"; normalTitle = "عربي"; ObjectID = "Yp5-ta-2SI"; */
+"Yp5-ta-2SI.normalTitle" = "English";
+
+/* Class = "UILabel"; text = "I Phone 5 s"; ObjectID = "YsK-Qq-QlW"; */
+"YsK-Qq-QlW.text" = "ايفون ٥ س";
+
+/* Class = "UILabel"; text = "2000 SR"; ObjectID = "yZ7-bR-ZYl"; */
+"yZ7-bR-ZYl.text" = "2000 SR";
+
+/* Class = "UILabel"; text = "Choose Service"; ObjectID = "zDn-Ih-Zdo"; */
+"zDn-Ih-Zdo.text" = "اختار الخدمه";
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "zFU-nQ-lpB"; */
+"zFU-nQ-lpB.text" = "اللون";
+
+/* Class = "UILabel"; text = "mobile"; ObjectID = "zrA-0g-7iB"; */
+"zrA-0g-7iB.text" = "الهاتف";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "ZrE-2Q-cdD"; */
+"ZrE-2Q-cdD.placeholder" = "الهاتف";
+
+/* Class = "UINavigationItem"; title = "Sign In"; ObjectID = "Zx8-T3-JCt"; */
+"Zx8-T3-JCt.title" = "تسجيل الدخول";
+

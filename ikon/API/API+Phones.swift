@@ -7,7 +7,7 @@ extension API {
     class func getPhoneData(completion: @escaping (_ error: Error?,_ phones: [Phone]?)-> Void) {
         let url = URLs.getPhonesData
         let api_token = "11"
-        let lang = "ar"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         
         let parameters = [
             "api_token" : api_token,
@@ -48,7 +48,7 @@ extension API {
     class func getAcceroesData(completion: @escaping (_ error: Error?,_ acceroes: [Accessores]?)-> Void) {
         let url = URLs.getAceessorisData
         let api_token = "11"
-        let lang = "ar"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         
         let parameters = [
             "api_token" : api_token,
@@ -88,7 +88,7 @@ extension API {
     class func getSparPartsData(completion: @escaping (_ error: Error?,_ sparparts: [SparParts]?)-> Void) {
         let url = URLs.getSparePartsData
         let api_token = "11"
-        let lang = "ar"
+        let lang = NSLocalizedString("en", comment: "profuct list lang")
         
         let parameters = [
             "api_token" : api_token,

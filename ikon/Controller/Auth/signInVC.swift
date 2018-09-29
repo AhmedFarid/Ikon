@@ -44,7 +44,8 @@ class signInVC: UIViewController{
                 //go to main page
             }else {
                 //messageBox
-                self.showAlert(title: "email or password is incorrect or you not registered", message: "check the email and password or check networ")
+                let message = NSLocalizedString("email or password is incorrect or you not registered", comment: "msg list lang")
+                self.showAlert(title: "email or password is incorrect or you not registered", message: message)
 
             }
         }

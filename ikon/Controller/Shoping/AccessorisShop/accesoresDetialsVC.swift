@@ -36,7 +36,8 @@ class accesoresDetialsVC: UIViewController {
     }
     @IBAction func addToCart(_ sender: Any) {
         guard (helper.getApiToken() != nil)  else {
-            self.showAlert(title: "Filed to Add Cart", message: "please login frist")
+            let message = NSLocalizedString("please login frist", comment: "msg list lang")
+            self.showAlert(title: "Filed to Add Cart", message: message)
             return
         }
         let newCart = Cart(context: context)
@@ -47,7 +48,8 @@ class accesoresDetialsVC: UIViewController {
         newCart.productImage = singelItem?.productsImage
         do{
             ad.saveContext()
-            self.showAlert(title: "Add to cart", message: "Added to cart successfully go to cart to request order")
+            let message = NSLocalizedString("Added to cart successfully go to cart to request order", comment: "msg list lang")
+            self.showAlert(title: "Add to cart", message: message)
         } catch {
             print("error in coreData")
         }

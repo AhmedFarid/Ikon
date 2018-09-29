@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "اسم المنتج";
+
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "ذالك يطلب معرفه موقعك الحالي";
+

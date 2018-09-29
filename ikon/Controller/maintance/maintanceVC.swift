@@ -33,6 +33,7 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var service = ["visit",
                    "maintenance"
     ]
+    
     var color = [colorAPI]()
     var model = [maintanceAPI]()
     var issue = [isuueAPI]()
@@ -90,7 +91,8 @@ class maintanceVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     //Actions.......................................
     @IBAction func getPrice(_ sender: Any) {
         guard let note = noteTF.text, !note.isEmpty else {
-            self.showAlert(title: "Order Filed", message: "enter any other issue description")
+            let message = NSLocalizedString("enter any other issue description", comment: "msg list lang")
+            self.showAlert(title: "Order Filed", message: message)
             return
         }
         

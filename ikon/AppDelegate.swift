@@ -8,6 +8,7 @@
     
     import UIKit
     import CoreData
+    import IQKeyboardManagerSwift
     
     //import CoreLocation
     @UIApplicationMain
@@ -20,6 +21,7 @@
         
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
             // Override point for customization after application launch.
+            IQKeyboardManager.sharedManager().enable = true
             
             if let api_token = helper.getApiToken(){
                 //skip Auth screen and go to main
@@ -27,6 +29,8 @@
                 let tab = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "swrer")
                 window?.rootViewController = tab
             }
+            Localizer.DoTheExchange()
+            
             //locationManager = CLLocationManager()
             //locationManager?.requestWhenInUseAuthorization()
             return true

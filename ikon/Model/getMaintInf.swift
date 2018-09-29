@@ -33,5 +33,26 @@ class getMaintInf: NSObject {
         self.orderDate = orderDate
         self.price = price
     }
-    
 }
+
+
+class getShopInfo: NSObject {
+    
+    var customersName: String
+    var customersStreetAddress: String
+    var customersTelephone: String
+    var email: String
+    var orderPrice: String
+    
+    init?(dict: [String: JSON]) {
+        guard let customersName = dict["customers_name"]?.string, let customersStreetAddress = dict["customers_street_address"]?.string, let customersTelephone = dict["customers_telephone"]?.string, let email = dict["email"]?.string, let orderPrice = dict["order_price"]?.string else { return nil}
+
+        self.customersName = customersName
+        self.customersStreetAddress = customersStreetAddress
+        self.customersTelephone = customersTelephone
+        self.email = email
+        self.orderPrice = orderPrice
+    }
+}
+
+
