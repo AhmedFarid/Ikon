@@ -40,7 +40,7 @@ class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             
             self.view.addGestureRecognizer(vc.panGestureRecognizer())
             self.view.addGestureRecognizer(vc.tapGestureRecognizer())
-            vc.rearViewRevealWidth = 320
+            vc.rearViewRevealWidth = 280
         }
     }
     
@@ -57,8 +57,17 @@ class guestVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         
         let window = (UIApplication.shared.delegate as? AppDelegate)?.window
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        window?.rootViewController = sb.instantiateViewController(withIdentifier: "swrer")
+        if let api_token = helper.getApiToken(){
+            print(api_token)
+//            let tab = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "swrer")
+//            window?.rootViewController = tab
+            window?.rootViewController = sb.instantiateViewController(withIdentifier: "swrer")
+            UIView.transition(with: window!, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+            
+        }else{
+        window?.rootViewController = sb.instantiateViewController(withIdentifier: "nave")
         UIView.transition(with: window!, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        }
         
         
         

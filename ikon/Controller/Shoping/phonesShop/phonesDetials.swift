@@ -25,7 +25,7 @@ class phonesDetials: UIViewController {
         phoneName.text = singelItem?.productsName
         phoneDes.text = singelItem?.productsDescription
         phonemodel.text = singelItem?.productsModel
-        phoneprice.text = (singelItem?.productsPrice)!+" SR"
+        phoneprice.text = (singelItem?.productsPrice)
         
         
         phoneImage.kf.indicatorType = .activity

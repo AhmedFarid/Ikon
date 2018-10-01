@@ -25,7 +25,7 @@ class accesoresDetialsVC: UIViewController {
         accessoName.text = singelItem?.productsName
         accessoDIsc.text = singelItem?.productsDescription
         AccessoModel.text = singelItem?.productsModel
-        accessoPrice.text = (singelItem?.productsPrice)!+" SR"
+        accessoPrice.text = (singelItem?.productsPrice)
         
         accesIMage.kf.indicatorType = .activity
         if let url = URL(string: "http://ikongo.com/site/"+(singelItem?.productsImage)!){
@@ -44,7 +44,7 @@ class accesoresDetialsVC: UIViewController {
         newCart.productId = singelItem?.productsId
         newCart.productName = singelItem?.productsName
         newCart.productDes = singelItem?.productsDescription
-        newCart.productPrice = (singelItem?.productsPrice)!+" SR"
+        newCart.productPrice = singelItem?.productsPrice
         newCart.productImage = singelItem?.productsImage
         do{
             ad.saveContext()
